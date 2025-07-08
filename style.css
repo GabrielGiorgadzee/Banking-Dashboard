@@ -11,6 +11,7 @@ html {
   background-color: #eaecf0;
 }
 
+/* Light/Dark Mode Toggle */
 .checkbox {
   display: none;
 }
@@ -56,6 +57,7 @@ html {
   box-shadow: inset -10px 0 0 0 #ffffff;
 }
 
+/* Dashboard */
 a {
   text-decoration: none;
   color: #eaecf0;

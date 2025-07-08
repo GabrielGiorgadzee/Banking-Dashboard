@@ -9,7 +9,7 @@ body {
   height: 100vh;
 }
 
-/* LIGHT/DARK MODE */
+/* LIGHT/DARK MODE TOGGLE */
 .checkbox {
   height: 30px;
   width: 60px;

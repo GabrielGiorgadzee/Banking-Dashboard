@@ -172,7 +172,15 @@ header {
 
 @media (max-width: 768px) {
   aside {
-    width: 80px;
+    width: 150px;
+  }
+
+  .dashboard,
+  .transactions,
+  .settings {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
   }
 
   .menu div h4 {

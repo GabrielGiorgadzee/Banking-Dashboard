@@ -283,3 +283,44 @@ header {
     display: none;
   }
 }
+
+@media (max-width: 420px) {
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-image-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-image-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .card-image-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .card-image-card h2 {
+    font-size: 1rem;
+  }
+
+  .card-image-card p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .card-image-card h2 {
+    font-size: 0.8rem;
+  }
+
+  .card-image-card p {
+    font-size: 0.5rem;
+  }
+}

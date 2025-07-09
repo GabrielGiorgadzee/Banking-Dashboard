@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: #eaecf0;
+}
+
+/* Light/Dark Mode Toggle */
+.checkbox {
+  display: none;
+}
+
+.toggle-label {
+  display: inline-block;
+  height: 30px;
+  width: 60px;
+  background: #fff;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 -2px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.toggle-label::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f1c40f;
+  border-radius: 50%;
+  transform: scale(0.9);
+  transition: 0.5s;
+  box-shadow: 0 0 15px #f1c40f, 0 0 30px #f39c12,
+    inset 2px 2px rgba(255, 255, 255, 0.8),
+    inset -2px -2px rgba(255, 255, 255, 0.5);
+}
+
+.checkbox:checked + .toggle-label {
+  background: #222;
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 0 4px 4px rgba(0, 0, 0, 0.1), inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox:checked + .toggle-label::before {
+  left: 30px;
+  background: #222;
+  box-shadow: inset -10px 0 0 0 #ffffff;
+}
+
+/* Dashboard */
+a {
+  text-decoration: none;
+  color: #eaecf0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+aside {
+  width: 300px;
+  background-color: #0f1222;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: width 0.3s;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.webaristo-logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.menu div {
+  display: flex;
+  align-items: center;
+  transition: background-color 0.5s;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 5px 10px 0 10px;
+}
+
+.menu div img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
+.menu div h4 {
+  font-size: 1rem;
+  margin: 0;
+  transition: opacity 0.3s;
+}
+
+.menu div:hover {
+  background-color: #0062ff;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+  overflow: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bank-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0f1222;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bell-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  aside {
+    width: 150px;
+  }
+
+  .dashboard,
+  .transactions,
+  .settings,
+  .cards,
+  .currency {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .menu div h4 {
+    display: none;
+  }
+}
+
+/* Responsive header */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .title-container {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .profile {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .profile span {
+    display: none;
+  }
+}

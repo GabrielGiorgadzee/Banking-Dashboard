@@ -192,7 +192,6 @@ header {
   .currency {
     display: flex;
     justify-content: center;
-    cursor: pointer;
   }
 
   .menu div h4 {

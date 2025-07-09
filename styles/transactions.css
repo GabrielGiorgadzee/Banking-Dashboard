@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: consolas;
+  font-family: "Roboto", sans-serif;
 }
 
 body,
@@ -57,7 +57,6 @@ html {
   box-shadow: inset -10px 0 0 0 #ffffff;
 }
 
-/* Dashboard */
 a {
   text-decoration: none;
   color: #eaecf0;
@@ -75,6 +74,7 @@ aside {
   flex-direction: column;
   flex-shrink: 0;
   transition: width 0.3s;
+  min-width: 80px;
 }
 
 .logo {
@@ -86,6 +86,8 @@ aside {
   width: 100px;
   height: 100px;
   margin-top: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
 .menu {
@@ -99,30 +101,24 @@ aside {
   padding: 1rem 1.5rem;
   border-radius: 8px;
   margin: 5px 10px 0 10px;
+  white-space: nowrap;
 }
 
 .menu div img {
   width: 24px;
   height: 24px;
   margin-right: 12px;
+  flex-shrink: 0;
 }
 
 .menu div h4 {
   font-size: 1rem;
   margin: 0;
-  transition: opacity 0.3s;
+  flex-shrink: 1;
 }
 
 .menu div:hover {
   background-color: #0062ff;
-}
-
-.dashboard,
-.transactions,
-.settings,
-.cards,
-.currency {
-  cursor: pointer;
 }
 
 main {
@@ -130,7 +126,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: #f5f7fa;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 header {
@@ -141,12 +137,15 @@ header {
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .title-container {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .bank-icon {
@@ -159,18 +158,22 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
   color: #0f1222;
+  white-space: nowrap;
 }
 
 .profile {
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .bell-icon {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .profile-photo {
@@ -178,6 +181,132 @@ header {
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+  flex-shrink: 0;
+}
+
+.transactions-content {
+  padding: 2rem 3rem;
+  overflow-x: auto;
+}
+
+.transactions-content h2 {
+  margin-bottom: 1rem;
+  color: #0f1222;
+  white-space: nowrap;
+}
+
+.transaction-list {
+  list-style: none;
+  width: 100%;
+  min-width: 320px;
+}
+
+.transaction-list li {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px 120px 50px;
+  align-items: center;
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.7rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  column-gap: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  word-break: break-word;
+}
+
+.transaction-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-list li span {
+  color: #333;
+}
+
+.transaction-list li .amount {
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.transaction-list li .amount.negative {
+  color: #ff4d4f;
+}
+
+.transaction-list li .amount.positive {
+  color: #52c41a;
+}
+
+.tx-icon {
+  justify-self: end;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 950px) and (min-width: 851px) {
+  .transaction-list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 1rem 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    align-items: center;
+  }
+
+  .transaction-list li span {
+    flex: 1 1 120px;
+    min-width: 120px;
+    color: #333;
+  }
+
+  .transaction-list li .amount {
+    text-align: right;
+    font-weight: bold;
+    min-width: 100px;
+  }
+
+  .transaction-list li .amount.negative {
+    color: #ff4d4f;
+  }
+
+  .transaction-list li .amount.positive {
+    color: #52c41a;
+  }
+
+  .tx-icon {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    justify-self: unset;
+  }
+}
+
+@media (max-width: 850px) {
+  .transaction-list li {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    row-gap: 8px;
+    padding: 1rem;
+  }
+
+  .transaction-list li span,
+  .transaction-list li img {
+    justify-self: start !important;
+    text-align: left !important;
+  }
+
+  .transaction-list li .amount {
+    text-align: left !important;
+  }
+
+  .tx-icon {
+    justify-self: start !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -185,21 +314,11 @@ header {
     width: 150px;
   }
 
-  .dashboard,
-  .transactions,
-  .settings,
-  .cards,
-  .currency {
-    display: flex;
-    justify-content: center;
-  }
-
   .menu div h4 {
     display: none;
   }
 }
 
-/* Responsive header */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -216,7 +335,6 @@ header {
   .profile {
     width: 100%;
     justify-content: center;
-    margin-top: 0;
   }
 
   .profile span {

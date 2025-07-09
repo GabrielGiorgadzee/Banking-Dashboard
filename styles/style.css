@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: consolas;
+  font-family: "Roboto", sans-serif;
 }
 
 body,
@@ -178,6 +178,66 @@ header {
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.dashboard-content {
+  padding: 2rem 3rem;
+}
+
+.card-image-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-image-card h2 {
+  margin: 1rem 0 0.5rem;
+  color: #0f1222;
+}
+
+.card-image-card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.card-image {
+  width: 140px;
+  height: auto;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 1rem;
+}
+
+.summary-card {
+  flex: 1;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+  margin-bottom: 0.5rem;
+  color: #0f1222;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress {
+  width: 46%;
+  height: 100%;
+  background: #0062ff;
 }
 
 @media (max-width: 768px) {

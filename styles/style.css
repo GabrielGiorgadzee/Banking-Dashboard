@@ -117,6 +117,14 @@ aside {
   background-color: #0062ff;
 }
 
+.dashboard,
+.transactions,
+.settings,
+.cards,
+.currency {
+  cursor: pointer;
+}
+
 main {
   flex: 1;
   display: flex;

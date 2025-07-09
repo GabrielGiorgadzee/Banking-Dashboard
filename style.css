@@ -179,7 +179,9 @@ header {
 
   .dashboard,
   .transactions,
-  .settings {
+  .settings,
+  .cards,
+  .currency {
     display: flex;
     justify-content: center;
     cursor: pointer;
